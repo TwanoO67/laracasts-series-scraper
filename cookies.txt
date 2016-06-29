@@ -1,9 +1,3 @@
-# HTTP Cookie File for domains related to laracasts.com.
-# To download this content click here, press return (Mac only) or copy and paste into a cookies.txt file.
-# It can be then used by wget and other standard complaint tools.
-# Example:  wget -x --load-cookies cookies.txt https://laracasts.com/series/discover-symfony-components/episodes/3
-#
-laracasts.com	FALSE	/	FALSE	1609772819	remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d	eyJpdiI6InZ2YWxHMDZHbFgwT3pJQ1NFMUJ2ZGc9PSIsInZhbHVlIjoiekJOMGtMWlljQWJpUElXa1VrTWpHRlVFNGhsdWpOa0pwbEt0T3ErOE9qMmxmdnJaYWZ6Y1hvb2FONnBTd2pQdU9HZmw5S1Q1XC8ybm5QZjFlakxubWsrZFpZZU4zWm9GQTd5K0VmVXBwNlwvaz0iLCJtYWMiOiI4ZDAyNDBlMjljYThkNGU2OGZmNDU4YmNlNjdjNzY2NjQ4YmE4NjQzNzlkMTk0NDMxY2U3MTkxMWZiN2I0NzViIn0%3D
-.laracasts.com	TRUE	/	FALSE	1467205263	_gat	1
-laracasts.com	FALSE	/	FALSE	1467211865	laravel_session	eyJpdiI6IlNRMm1aenpHWVFJQlFcL0FcL2d5ZXlsdz09IiwidmFsdWUiOiIzRDJEcDg5cGsxcFV0Z1Q5bVZJbU9TV1luQzBpeW03SkVDZTlISUI4bGVFd3NuTXlqdk55NnBOMytUYmIyY2lNNUgwMVNPU3ZDamRkZWRPZStmREFiUT09IiwibWFjIjoiNzQ0OGE4YzUwNDlhYWNkYmE0N2I5MDFmYjM4NTM4NjY2ZDNmZjQyOGYwN2QyNzQyMzY5NTIyNjExMmExMDZmOSJ9
-.laracasts.com	TRUE	/	FALSE	1530276665	_ga	GA1.2.427154182.1452092812
+# Add your Laracasts cookie file here.
+
+# I recommend https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg?hl=en to easily pull the laracasts cookies in a txt format.

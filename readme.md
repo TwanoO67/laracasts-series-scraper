@@ -7,8 +7,7 @@ Basic scraper to retrieve a full set of videos under a given series on the websi
 
 ### Instructions
 
-1. Add a series link to the urls file
-2. Run php index.php when you have a list of videos you like
+1. Add the series links to the urls file (one on each line)
+2. Log in to Laracasts if you haven't already and pull your session cookie into a text format, copy it in into cookies.txt
+3. Run php index.php
 3. Learn from the downloaded series.
-
-
