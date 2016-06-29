@@ -2,18 +2,22 @@
 
 require_once(__DIR__ . "/vendor/autoload.php");
 
+$startTime = time();
 $lines = file('urls', FILE_IGNORE_NEW_LINES);
-
-$i = 1;
-
+$urlCount = count($lines);
+$i = 0;
 // Scrape each series url in the urls file
+
+echo 'Found '. $urlCount;
+echo $urlCount == 1 ? ' url' : ' urls';
+echo ' to crawl'.PHP_EOL;
+
 foreach ($lines as $url) {
     $client = new \Goutte\Client();
     $crawler = $client->request('GET', $url);
     $seriesLinks = $crawler->filter('li span a')->extract(array('href'));
 
     $dirName = str_replace('https://laracasts.com/series/', '', $url);
-    exec('mkdir ' . $dirName);
 
     // Scrape each link that's in the series
     foreach ($seriesLinks as $seriesLink) {
@@ -31,13 +35,27 @@ foreach ($lines as $url) {
         }
 
         $pathToCookie = __DIR__ . "/cookies.txt";
-        $command = 'wget --content-disposition --directory-prefix='.$dirName.' --load-cookies'.' '.$pathToCookie.' '.$downloadLink;
+        $command = 'wget --content-disposition --directory-prefix=downloads/'.$dirName.' --load-cookies'.' '.$pathToCookie.' '.$downloadLink;
 
-        echo 'Downloading ' . $seriesLink . '...'.PHP_EOL;
+        echo 'Downloading ' . str_replace('/series/', '', $seriesLink) . '...'.PHP_EOL;
 //        exec($command);
         exec($command . ' > /dev/null 2>&1');
         echo 'Done!'.PHP_EOL;
+
         $i++;
     }
 }
 
+$endTime = time();
+$timeTakenSeconds = $endTime - $startTime;
+$timeTaken = ($timeTakenSeconds > 60) ? round($timeTakenSeconds / 60) . ' minutes' : $timeTakenSeconds . ' seconds';
+
+echo PHP_EOL;
+echo PHP_EOL;
+echo '****************************'. PHP_EOL;
+echo 'Crawled ' .$urlCount . ' series';
+echo $urlCount == 1 ? ' link' : ' links';
+echo ' and downloaded '. $i;
+echo ($i > 1) ? ' videos': ' video';
+echo ' in ' . $timeTaken.PHP_EOL;
+echo '============================'. PHP_EOL;
