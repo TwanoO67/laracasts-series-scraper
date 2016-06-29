@@ -1,10 +1,2 @@
-# HTTP Cookie File for domains related to laracasts.com.
-# To download this content click here, press return (Mac only) or copy and paste into a cookies.txt file.
-# It can be then used by wget and other standard complaint tools.
-# Example:  wget -x --load-cookies cookies.txt https://laracasts.com/
-#
-laracasts.com	FALSE	/	FALSE	1467213626	XSRF-TOKEN	eyJpdiI6ImRWblBEcCtHbmdianUxdVhOSXQwc2c9PSIsInZhbHVlIjoiMG1cL2lDZnhNXC9rSUpsRXdPdEJ3VkdLVnB4V3NBTTB3SW5ON1FVbDZuUzhRNldPWEZ6NzQyOVpkXC95TjkwU3c2eHVBOGxZMWxhRTcwd0lcL1wvNU04WFpBZz09IiwibWFjIjoiNTQwOGQyYjQ4MTc3YzA1MjM0NjdhMGY4NzkyYjA1ZTZmOThlYjdhNTVlYjk0OGFkNDJjNTM3ZGVlMGExN2U2ZCJ9
-laracasts.com	FALSE	/	FALSE	1624886426	remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d	eyJpdiI6Imh2aXFEOEF2YjI0cEFwVmRcL3JiMEFBPT0iLCJ2YWx1ZSI6IjJOTE9GdWltNm9oT3BTU1dmbkcrMExybkpsb1I2NWV2Nmo3QUhiaVJBT1NFYVE4dXlBdkRPZ2hUNGJPdXBSek45RTJrK21OcWRPVVkrNE9nR1NFajMwT0lOVzFkTU14dk15RDdSeFR2RnNRPSIsIm1hYyI6IjEwYTk4OWQ3ZTU4ZjYyNjc1OGViMjQzNWQyYmI1MjM5YjNjNjExODg1YTdlNjg5MjM3ZDg4OTdlZjllMTU1M2QifQ%3D%3D
-laracasts.com	FALSE	/	FALSE	1467214265	laravel_session	eyJpdiI6InFZXC84eWpJWm1ndE9xekxZRlwvZXJOZz09IiwidmFsdWUiOiJvK1JDd0xjNDN3MFwvb0NER2NxT0VtVGZ3ZURUXC9DZUJxSStcL0NqY01PY083ZUZZcDlIXC9XaVNyQUg5ZmdPR3ROU3F2K2ZneDIya0xJemk3Sm1VeVFXN1E9PSIsIm1hYyI6ImNiYjk2OTA3N2M4OTdmNWM0NWI5M2ZhYjU1ZWUxNjI2MTcxMmZlNDI0ODUyMzljY2JiMDhlOTkwOTQ1NDgxNWMifQ%3D%3D
-.laracasts.com	TRUE	/	FALSE	1530279065	_ga	GA1.2.427154182.1452092812
-.laracasts.com	TRUE	/	FALSE	1467207665	_gat	1
+# Add your Laracasts cookie file here.
+# I recommend https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg?hl=en to easily pull the laracasts cookies in a txt format.
