@@ -4,9 +4,23 @@ require_once(__DIR__ . "/vendor/autoload.php");
 
 $startTime = time();
 $lines = file('urls', FILE_IGNORE_NEW_LINES);
+
+## Strips out any lines that are comments to ensure the count is of urls only.
+foreach ($lines as $key => $line) {
+    if (strpos($line, '#') !== false) {
+        unset($lines[$key]);
+    }
+}
+
 $urlCount = count($lines);
+
+if ($urlCount == 0) {
+    echo 'No urls found.'.PHP_EOL;
+    echo 'Please enter at least one url in the urls file'.PHP_EOL;
+    exit;
+}
+
 $i = 0;
-// Scrape each series url in the urls file
 
 echo 'Found '. $urlCount;
 echo $urlCount == 1 ? ' url' : ' urls';
