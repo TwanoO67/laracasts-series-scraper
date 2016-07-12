@@ -5,6 +5,8 @@ Basic scraper to retrieve a full set of videos under a given series on the websi
 - This does not circumvent the need to pay in any way, you still need a valid account
 - If Jeffrey objects to this, I will take it down.
 
+![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 ### Instructions
 
 1. Add the series links to the urls file (one on each line)
