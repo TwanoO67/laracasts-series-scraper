@@ -5,7 +5,7 @@ Basic scraper to retrieve a full set of videos under a given series on the websi
 - This does not circumvent the need to pay in any way, you still need a valid account
 - If Jeffrey objects to this, I will take it down.
 
-![Example Screenshot](https://raw.githubusercontent.com/KMountford/laracasts-series-scraper/master/example-screenshot.jpg)
+<img src="https://raw.githubusercontent.com/KMountford/laracasts-series-scraper/master/example-screenshot.jpg" data-canonical-src="https://raw.githubusercontent.com/KMountford/laracasts-series-scraper/master/example-screenshot.jpg" width="323" height="605" />
 
 ### Instructions
 
