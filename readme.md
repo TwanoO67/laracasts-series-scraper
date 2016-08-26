@@ -9,7 +9,8 @@ Basic scraper to retrieve a full set of videos under a given series on the websi
 
 ### Instructions
 
+0. Run `composer install`
 1. Add the series links to the urls file (one on each line)
-2. Log in to Laracasts if you haven't already and pull your session cookie into a text format, copy it in into cookies.txt (I recommend [this chrome extensions](https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg?hl=en) to easily do this)
+2. Log in to Laracasts if you haven't already and pull your session cookie into a text format, copy it in into cookies.txt (I recommend [this chrome extension](https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg?hl=en) to easily do this)
 3. Run php scrape.php when ready to begin scraping
 3. Learn from the downloaded series.
