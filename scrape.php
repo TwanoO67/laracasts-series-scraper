@@ -2,6 +2,11 @@
 
 require_once(__DIR__ . "/vendor/autoload.php");
 
+function dd($dumpThis) {
+    var_dump($dumpThis);
+    die();
+}
+
 $startTime = time();
 $lines = file('urls', FILE_IGNORE_NEW_LINES);
 
@@ -29,30 +34,30 @@ echo ' to crawl'.PHP_EOL;
 foreach ($lines as $url) {
     $client = new \Goutte\Client();
     $crawler = $client->request('GET', $url);
-    $seriesLinks = $crawler->filter('li span a')->extract(array('href'));
-
-    $dirName = str_replace('https://laracasts.com/series/', '', $url);
+    $episodeItemLinks = $crawler->filter('.episode-list-item a')->extract(array('href'));
+    $dirName = str_replace('https://laracasts.com/', '', $url);
 
     // Scrape each link that's in the series
-    foreach ($seriesLinks as $seriesLink) {
-        $client = new \Goutte\Client();
-        $crawler = $client->request('GET', 'http://www.laracasts.com/' . $seriesLink);
-        $links = $crawler->filter('li a')->extract(array('href'));
+    $episodeItemLinks = array_unique($episodeItemLinks);
 
-        $downloadLink = '';
+    foreach ($episodeItemLinks as $episodeItem) {
 
-        // All the li a links on the page, we want to filter it down to the download link
-        foreach ($links as $key => $link) {
-            if (strpos($link, 'downloads') !== false) {
-                $downloadLink = '"http://www.laracasts.com' . $link . '"';
-            }
+        if (strpos($episodeItem, '/series/') === false) {
+            continue;
         }
+
+        $client = new
+         \Goutte\Client();
+        $crawler = $client->request('GET', 'http://www.laracasts.com' . $episodeItem);
+
+        $downloadLink = $crawler->filter('.video-details-buttons a')->first()->attr('href') . '"';
+        $downloadLink = '"http://www.laracasts.com' . $downloadLink;
 
         $pathToCookie = __DIR__ . "/cookies.txt";
         $command = 'wget --content-disposition --directory-prefix=downloads/'.$dirName.' --load-cookies'.' '.$pathToCookie.' '.$downloadLink;
 
-        echo 'Downloading ' . str_replace('/series/', '', $seriesLink) . '...'.PHP_EOL;
-//        exec($command);
+        echo 'Downloading ' . str_replace('/series/', '', $episodeItem) . '...'.PHP_EOL;
+       // exec($command);
         exec($command . ' > /dev/null 2>&1');
         echo 'Done!'.PHP_EOL;
 
@@ -62,7 +67,7 @@ foreach ($lines as $url) {
 
 $endTime = time();
 $timeTakenSeconds = $endTime - $startTime;
-$timeTaken = ($timeTakenSeconds > 60) ? round($timeTakenSeconds / 60) . ' minutes' : $timeTakenSeconds . ' seconds';
+$timeTaken = ($timeTakenSeconds > 60) ? round($timeTakenSeconds / 60) . ' minute(s)' : $timeTakenSeconds . ' seconds';
 
 echo PHP_EOL;
 echo PHP_EOL;
@@ -72,4 +77,4 @@ echo $urlCount == 1 ? ' link' : ' links';
 echo ' and downloaded '. $i;
 echo ($i > 1) ? ' videos': ' video';
 echo ' in ' . $timeTaken.PHP_EOL;
-echo '============================'. PHP_EOL;
+echo '============================'. PHP_EOL;;

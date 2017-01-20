@@ -1,6 +1,1 @@
-# Add your Laracasts cookie file here.
-# I recommend https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg?hl=en to easily pull the laracasts cookies in a txt format.
-# HTTP Cookie File for domains related to laracasts.com.
-# To download this content click here, press return (Mac only) or copy and paste into a cookies.txt file.
-# It can be then used by wget and other standard complaint tools.
-# Example:  wget -x --load-cookies cookies.txt https://laracasts.com/series/learning-vue-step-by-step/episodes/1
+# Your Laracasts Cookie
