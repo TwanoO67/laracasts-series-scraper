@@ -1,0 +1,15 @@
+version: '2.2'
+services:
+  php:
+     container_name: "laracast"
+     build: .
+     restart: always
+     volumes:
+      - ".:/var/www/html"
+      #- "./config/apache:/etc/apache2/sites-enabled/"
+     restart: always
+     working_dir: /var/www/html
+     ports:
+      - "0:80"
+     command: "apache2-foreground"
+

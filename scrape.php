@@ -31,11 +31,13 @@ echo 'Found '. $urlCount;
 echo $urlCount == 1 ? ' url' : ' urls';
 echo ' to crawl'.PHP_EOL;
 
+$site='https://laracasts.com/';
+
 foreach ($lines as $url) {
     $client = new \Goutte\Client();
     $crawler = $client->request('GET', $url);
-    $episodeItemLinks = $crawler->filter('.episode-list-item a')->extract(array('href'));
-    $dirName = str_replace('https://laracasts.com/', '', $url);
+    $episodeItemLinks = $crawler->filter('.episode-list-title a')->extract(array('href'));
+    $dirName = str_replace($site, '', $url);
 
     // Scrape each link that's in the series
     $episodeItemLinks = array_unique($episodeItemLinks);
@@ -48,10 +50,11 @@ foreach ($lines as $url) {
 
         $client = new
          \Goutte\Client();
-        $crawler = $client->request('GET', 'http://www.laracasts.com' . $episodeItem);
+         echo 'Episode link ' .$site . $episodeItem.PHP_EOL;
+        $crawler = $client->request('GET', $site . $episodeItem);
 
-        $downloadLink = $crawler->filter('.video-details-buttons a')->first()->attr('href') . '"';
-        $downloadLink = '"http://www.laracasts.com' . $downloadLink;
+        $downloadLink = $crawler->filter('a[title="Download Video"]')->first()->attr('href');
+        $downloadLink = '"'.$site . $downloadLink . '"';
 
         $pathToCookie = __DIR__ . "/cookies.txt";
         $command = 'wget --content-disposition --directory-prefix=downloads/'.$dirName.' --load-cookies'.' '.$pathToCookie.' '.$downloadLink;

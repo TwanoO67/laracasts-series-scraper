@@ -20,3 +20,10 @@ Requires:
 3. Log in to Laracasts if you haven't already and pull your session cookie into a text format, copy it in into cookies.txt (I recommend [this chrome extension](https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg?hl=en) to easily do this)
 4. Run php scrape.php when ready to begin scraping
 5. Learn from the downloaded series.
+
+### Docker usage
+
+* init the environment with "docker-compose up -d"
+* install dependency `./enter` then `composer install`
+* don't forget to set your cookies.txt and urls files
+* run the scrapper `./enter` then `php scrape.php`
